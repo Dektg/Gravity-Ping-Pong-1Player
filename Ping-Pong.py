@@ -7,6 +7,14 @@ window.tracer(2)
 
 space_rocket = 80
 
+score = 0
+
+FONT = ("Arial", 44)
+s1 = turtle.Turtle(visible=False)
+s1.color('white')
+s1.penup()
+s1.setposition(0, 300)
+s1.write(score, font=FONT)
 
 border = turtle.Turtle()
 border.color('white')
@@ -32,7 +40,7 @@ ball.shape("circle")
 ball.color("black")
 
 ball.speedY = -1
-ball.speedX = random.choice([-5,-4,-3,3,4, 5])
+ball.speedX = random.choice([-4,-3,-2, 2, 3,4])
 
 # РАКЕТКА
 rocket = turtle.Turtle()
@@ -46,15 +54,15 @@ rocket.goto(0, -250)
 # УПРАВЛЕНИЕ РАКЕТКИ
 def move_Right():
     x = rocket.xcor() + space_rocket
-    if x > 450:
-        x = 450
+    if x > 350:
+        x = 350
     rocket.setx(x)
 
 
 def move_Left():
     x = rocket.xcor() - space_rocket
-    if x < -450:
-        x = -450
+    if x < -350:
+        x = -350
     rocket.setx(x)
 
 
@@ -71,11 +79,18 @@ while True:
     if ball.ycor() >= rocket.ycor() - 10 and ball.ycor() <= rocket.ycor() + 10 \
             and ball.xcor() >= rocket.xcor() - 50 and ball.xcor() <= rocket.xcor() + 50:
         ball.speedY = -ball.speedY
+        score += 1
+        s1.clear()
+        s1.write(score, font=FONT)
 
     ball.speedY = ball.speedY - GRAVITY
     ball.goto(ball.xcor() + ball.speedX, ball.ycor() + ball.speedY)
     if ball.ycor() <= -290:
-        ball.speedY = -ball.speedY
+        ball.goto(rand_Ball_Start_X, 250)
+        ball.speedY = -1
+        score -= 1
+        s1.clear()
+        s1.write(score, font=FONT)
 
     if ball.xcor() <= -390 or ball.xcor() >= 390:
         ball.speedX = -ball.speedX
