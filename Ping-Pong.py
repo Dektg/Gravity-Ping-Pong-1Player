@@ -28,11 +28,11 @@ ball.shape("circle")
 ball.color("black")
 
 ball.speedY = -1
-ball.speedX = -8
+ball.speedX = random.choice([-8, -7, -6, -5, 5, 6, 7, 8])
 
 
 
-GRAVITY = 0.1
+GRAVITY = 0.17
 
 while True:
     ball.speedY = ball.speedY - GRAVITY
