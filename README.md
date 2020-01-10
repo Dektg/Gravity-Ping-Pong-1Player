@@ -10,9 +10,9 @@ Good luck !!!
 ![Снимок экрана 2020-01-10 в 12 23 05](https://user-images.githubusercontent.com/56469979/72120542-059c3d80-33a4-11ea-92f3-80b9c707db24.png)
 
 Racket control is carried out through the buttons:
-1. Left: 'a' or 'Arrow left'
-2. Right: 'd' or 'Arrow right'
+1. Left: « a » or « Arrow left »
+2. Right: « d » or « Arrow right »
 
 Управление ракеткой происходит через кноноки:
-1. Лево: 'a или 'Стрелочка лево'
-2. Право: 'd' или 'Стрелочка право'
+1. Лево: « a » или « Стрелочка лево »
+2. Право: « d » или « Стрелочка право »
